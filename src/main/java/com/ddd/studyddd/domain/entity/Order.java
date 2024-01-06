@@ -9,6 +9,7 @@ public class Order {
 
     private List<OrderLine> orderLines;
     private Money totalAmounts;
+    private String orderNumber;
 
     public Order(List<OrderLine> orderLines, ShippingInfo shippingInfo) {
         setOrderLines(orderLines);
@@ -66,6 +67,24 @@ public class Order {
 
     private boolean isShippingChangeable() {
         return state == OrderState.PAYMENT_WAITING || state == OrderState.PREPARING;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null) return false;
+        if (object.getClass() != Order.class) return false;
+        Order other = (Order) object;
+        if (this.orderNumber == null) return false;
+        return this.orderNumber.equals(other.orderNumber);
+    }
+
+    @Override
+    public int hashCode(){
+        final int prime = 33;
+        int result = 1;
+        result = prime * result + ((orderNumber == null) ? 0 : orderNumber.hashCode());
+        return result;
     }
 
     public enum OrderState {
