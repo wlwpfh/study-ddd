@@ -12,6 +12,7 @@ public class Order {
     private List<OrderLine> orderLines;
     private Money totalAmounts;
     private String orderNumber;
+    private Orderer orderer;
 
     public Order(List<OrderLine> orderLines, ShippingInfo shippingInfo) {
         setOrderLines(orderLines);
@@ -87,6 +88,15 @@ public class Order {
         int result = 1;
         result = prime * result + ((orderNumber == null) ? 0 : orderNumber.hashCode());
         return result;
+    }
+
+    public void shipTo(ShippingInfo newShippingInfo, boolean useNewShippingAddrAsMemberAddr){
+        verifyNotYetShipped();
+        setShippingInfo(newShippingInfo);
+        if(useNewShippingAddrAsMemberAddr){
+            // 다른 애그리거트의 상태를 변경하는 것인데 이러면 안된다!
+            orderer.getMember().changeAddress(newShippingInfo.getAddress());
+        }
     }
 
     public enum OrderState {
