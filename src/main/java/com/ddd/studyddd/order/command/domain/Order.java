@@ -1,4 +1,6 @@
-package com.ddd.studyddd.domain.entity;
+package com.ddd.studyddd.order.command.domain;
+
+import com.ddd.studyddd.domain.entity.Money;
 
 import java.util.List;
 import java.util.Objects;
