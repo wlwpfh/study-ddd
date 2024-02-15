@@ -43,7 +43,7 @@ public class Order {
         this.totalAmounts = new Money(sum);
     }
 
-    public void chagneShippingInfo(ShippingInfo newShippingInfo) {
+    public void changeShippingInfo(ShippingInfo newShippingInfo) {
         verifyNotYetShipped();
         setShippingInfo(newShippingInfo);
     }
