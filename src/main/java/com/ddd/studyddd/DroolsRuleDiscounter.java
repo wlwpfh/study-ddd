@@ -1,7 +1,7 @@
 package com.ddd.studyddd;
 
 import com.ddd.studyddd.domain.entity.Money;
-import com.ddd.studyddd.domain.entity.OrderLine;
+import com.ddd.studyddd.order.command.domain.OrderLine;
 
 import java.util.List;
 

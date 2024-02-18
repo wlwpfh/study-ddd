@@ -1,4 +1,7 @@
-package com.ddd.studyddd.domain.entity;
+package com.ddd.studyddd.order.command.domain;
+
+import com.ddd.studyddd.domain.entity.Money;
+import com.ddd.studyddd.catalog.command.domain.product.Product;
 
 public class OrderLine {
     private Product product;

@@ -1,6 +1,6 @@
 package com.ddd.studyddd;
 
-import com.ddd.studyddd.domain.entity.Order;
+import com.ddd.studyddd.order.command.domain.Order;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
